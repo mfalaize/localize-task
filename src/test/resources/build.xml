@@ -20,7 +20,7 @@ limitations under the License.
     <target name="init"
             description="Taskdef the LocalizeTask">
         <taskdef name="localize"
-                 classname="com.mfalaize.ant.html.LocalizeTask"
+                 classname="com.mfalaize.ant.LocalizeTask"
                  classpath="target"/>
     </target>
 
