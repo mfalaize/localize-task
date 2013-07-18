@@ -31,7 +31,7 @@ import org.apache.tools.ant.taskdefs.MatchingTask;
 /**
  * Ant task to translate files such as HTML files easily from the build process.
  * It replaces all occurrences of the
- * <code>$loc{key}</code> pattern by the corresponding in properties or java
+ * <code>$${key}</code> pattern by the corresponding in properties or java
  * files.
  * <p>
  * The task extends of {@link MatchingTask} which allows you to use commons
@@ -45,18 +45,18 @@ public class LocalizeTask extends MatchingTask {
 
     /**
      * The pattern matches strings such as
-     * <code>$loc{key}</code>.
+     * <code>$${key}</code>.
      */
-    private static final String LOCALIZE_PATTERN = "(\\$loc\\{\\s*)([\\w\\._-]+)(\\s*\\})";
+    private static final String LOCALIZE_PATTERN = "(\\$\\$\\{\\s*)([\\w\\._-]+)(\\s*\\})";
     /**
      * The project directory. Default is the current working directory.
      */
     private File projectDirectory = new File(".");
     /**
      * The base name of the resource bundle, a fully qualified class name.
-     * Default to html.
+     * Default to messages.
      */
-    private String resourceBundleBaseName = "html";
+    private String resourceBundleBaseName = "messages";
     /**
      * Encoding of the files to translate. Default is UTF-8.
      */
