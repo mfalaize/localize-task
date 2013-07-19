@@ -3,13 +3,13 @@ Localize-Task
 
 ###Description
 
-This project is a Ant task designed to translate files such as HTML files directly from the build process. This task generate as many directories as you have properties or java localization files in your project.
+This project is a Ant task designed to translate files such as HTML files directly from the build process. This task generates as many directories as you have properties or java localization files in your project.
 
 For example, in this project there is two properties files for both French and English languages and one HTML file (test.html). When the unit test runs during the build, the task generate en/ and fr/ directories with translated test.html file inside.
 
 ###Why this project ?
 
-When you design an international HTML 5 project without a server language such as PHP or ASP (for static website or client-server project architecture with HTML-javascript), you always ask yourself about translation. May I use javascript and AJAX to get the right word from a remote server or do I have to use a server language ?
+When you design an international HTML 5 project without a server language such as PHP or ASP (for static website or client-server project architecture with HTML-javascript), you always ask yourself about translation. May you use javascript and AJAX to get the right word from a remote server or do you have to use a server language ?
 
 The answer is this project. There is two advantages to use this :
 * The internationalization is as easy to maintain than a project using a server language.
@@ -27,7 +27,7 @@ Here is an example of a localize target :
         &lt;localize projectDirectory="." targetDirectory="target" includes="**/*.html" resourceBundleBaseName="messages" encoding="UTF-8" translateDirectory="src/test/resources/"/&gt;
 &lt;/target&gt;
 </pre>
-You can use standard Ant includes and excludes attributes to select files you want to proceed. All specific attribute of the localize task are notified in this example but every attribute are optionnal and have a default value :
+You can use standard Ant includes and excludes attributes to select files you want to proceed. All specific attributes of the localize task are notified in this example but every attributes are optionnal and have a default value :
 * projectDirectory default is the working directory of Ant.
 * targetDirectory default is the same as projectDirectory. The target directory is the directory in which the locales folders will be generated.
 * resourceBundleBaseName default is messages (in this example the attribute is useless by the way).
@@ -36,7 +36,7 @@ You can use standard Ant includes and excludes attributes to select files you wa
 
 ###How to translate text in your files ?
 
-You have just to put the pattern <code>$${key}</code> in your file. For example in a HTML code :
+You have just to put the pattern <code>$${key}</code> in your files. For example in a HTML code :
 <pre>
 &lt;h1&gt;$${main.title}&lt;/h1&gt;
 </pre>
