@@ -18,15 +18,15 @@ The answer is this project. There is two advantages to use this :
 ###How to configure your build.xml ?
 
 Here is an example of a localize target :
-<pre>
-&lt;target name="localize"
-            description="Taskdef the LocalizeTask"&gt;
-        &lt;taskdef name="localize"
+```xml
+<target name="localize"
+            description="Taskdef the LocalizeTask">
+        <taskdef name="localize"
                  classname="com.mfalaize.ant.LocalizeTask"
-                 classpath="target"/&gt;
-        &lt;localize projectDirectory="." targetDirectory="target" includes="**/*.html" resourceBundleBaseName="messages" encoding="UTF-8" translateDirectory="src/test/resources/"/&gt;
-&lt;/target&gt;
-</pre>
+                 classpath="target"/>
+        <localize projectDirectory="." targetDirectory="target" includes="**/*.html" resourceBundleBaseName="messages" encoding="UTF-8" translateDirectory="src/test/resources/"/>
+</target>
+```
 You can use standard Ant includes and excludes attributes to select files you want to proceed. All specific attributes of the localize task are notified in this example but every attributes are optionnal and have a default value :
 * projectDirectory default is the working directory of Ant.
 * targetDirectory default is the same as projectDirectory. The target directory is the directory in which the locales folders will be generated.
@@ -37,7 +37,7 @@ You can use standard Ant includes and excludes attributes to select files you wa
 ###How to translate text in your files ?
 
 You have just to put the pattern <code>$${key}</code> in your files. For example in a HTML code :
-<pre>
-&lt;h1&gt;$${main.title}&lt;/h1&gt;
-</pre>
+```html
+<h1>$${main.title}</h1>
+```
 Note that you can put spaces between key and braces.
