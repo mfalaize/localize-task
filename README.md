@@ -41,3 +41,13 @@ You have just to put the pattern <code>$${key}</code> in your files. For example
 <h1>$${main.title}</h1>
 ```
 Note that you can put spaces between key and braces.
+
+###How to translate during development phase ?
+
+During the development phase, you just have to add the [localize-task jQuery plugin](src/main/resources/js/localize-task-1.0.0.min.js) in your project (available in the <code>src/main/resources/js</code> directory) and to put this tag at the end of your HTML file, just before the <code>body</code> ending tag :
+```html
+<script src="localize-task-1.0.0.min.js"></script>
+```
+
+This jQuery plugin is based on the jquery-i18n-properties plugin available at https://code.google.com/p/jquery-i18n-properties/.
+This tag will be automatically removed by the localize ant task during the build process.
