@@ -51,3 +51,5 @@ During the development phase, you just have to add the [localize-task jQuery plu
 
 This jQuery plugin is based on the jquery-i18n-properties plugin available at https://code.google.com/p/jquery-i18n-properties/.
 This tag will be automatically removed by the localize ant task during the build process.
+
+You can customize the jQuery plugin parameter by changing the <code>name</code>,<code>path</code> and <code>language</code> properties at the beginning of the js file.
