@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* localize-task v1.0.0 */
 jQuery(document).ready(function() {
     jQuery.i18n.properties({
         name: 'messages',

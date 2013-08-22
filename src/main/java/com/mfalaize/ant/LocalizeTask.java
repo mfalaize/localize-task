@@ -49,6 +49,11 @@ public class LocalizeTask extends MatchingTask {
      */
     private static final String LOCALIZE_PATTERN = "(\\$\\$\\{\\s*)([\\w\\._-]+)(\\s*\\})";
     /**
+     * The pattern matches the line which contains the localize-task.js script
+     * inclusion.
+     */
+    private static final String LOCALIZE_JS_PATTERN = "<script\\s*src=\"localize-task\\.(min\\.)?js\"\\s*/?>(</script>)?";
+    /**
      * The project directory. Default is the current working directory.
      */
     private File projectDirectory = new File(".");
@@ -151,6 +156,13 @@ public class LocalizeTask extends MatchingTask {
                         fileString = matcher.replaceFirst(resourceBundle.getString(key));
                         log(String.format("Replacing occurrence of %s by %s.", matcher.group(), resourceBundle.getString(key)), Project.MSG_DEBUG);
                         matcher = pattern.matcher(fileString);
+                    }
+
+                    // localize-task.js inclusion removal
+                    matcher = Pattern.compile(LOCALIZE_JS_PATTERN).matcher(fileString);
+                    if (matcher.find()) {
+                        fileString = matcher.replaceFirst("");
+                        log("Removing the localize-task.js inclusion.", Project.MSG_DEBUG);
                     }
 
                     String newFilePath = directory.getAbsolutePath() + File.separator + org.apache.tools.ant.util.FileUtils.getRelativePath(projectDirectory, file);
